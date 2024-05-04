@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+  <section class="update-student">
+    <h2>Update Student Information</h2>
+    <form action="" method='POST' novalidate>
+      {% csrf_token %}
+      {{form.non_field_errors}}
+      {% for field in form %}
+        <div class='input-field-wrapper'>
+          {{field.label_tag}}
+          <span>{{field.errors|striptags}}</span>
+          {{field}}
+        </div>
+      {% endfor %}
+      <button class='add-button update-button' type="submit">Update</button>
+      <a class='back-button' href="{% url 'home' %}">Back to Home</a>
+    </form>
+    <div class="backbtn-container">
+    </div>
+  </section>
+{% endblock main %}
+

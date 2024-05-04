@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+<main class="main-content">
+  <section class="add-student">
+    <h2>Add New Student</h2>
+    <form action="" method='POST' novalidate>
+      {% csrf_token %}
+      {{form.non_field_errors}}
+      {% for field in form %}
+        <div class='input-field-wrapper'>
+          {{field.label_tag}}
+          <span>{{field.errors|striptags}}</span>
+          {{field}}
+        </div>
+      {% endfor %}
+      <button class='add-button' type="submit">Add</button>
+    </form>
+  </section>
+  <section class="student-info">
+    <h2>Show Student Information</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        {% comment %} <th>Password</th> {% endcomment %}
+        <th>Action</th>
+      </tr>
+      {% for student in students %}
+        <tr>
+          <td class='student-id'>{{student.id}}</td>
+          <td>{{student.name}}</td>
+          <td>{{student.email}}</td>
+          {% comment %} <td>{{student.password}}</td> {% endcomment %}
+          <td class='action-buttons'>
+            <a class='edit-link' href="{% url 'update' student.id %}">Edit</a>
+            <a class='delete-link' href="{% url 'confirm_delete' student.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </section>
+</main>
+{% endblock main %}

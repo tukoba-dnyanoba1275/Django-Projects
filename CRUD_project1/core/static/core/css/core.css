@@ -1,0 +1,224 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* background: linear-gradient(145deg, #d5d9e0, #e6f2ce); */
+  background-color: #d9e1f0;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100vw;
+}
+a {
+  text-decoration: none;
+}
+
+/** Styling => heading */
+.heading {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 20px ;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e8a3bff0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #63112b;
+}
+
+/** Styling => main-content */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/** Styling => section.add-student */
+section.add-student {
+  min-width:320px;
+  max-width:420px;
+  /* padding: 10px; */
+  /* background-color: #f9cb56d2; */
+}
+section.add-student h2{
+  margin: 5px auto 10px;
+  padding: 15px 10px;
+  width:95%;
+  border-radius: 5px;
+  background-color: #72e6fbd6;
+  text-align: center;
+  font-weight: 600;
+}
+
+.input-field-wrapper {
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+.input-field-wrapper span {
+  color: #cd2121;
+  margin-left: 10px;
+}
+.input-field-wrapper input {
+  padding: 10px 0;
+  margin: 5px 0;
+  width: 95%;
+  font-size: 1.2rem;
+  border: 1px solid #acacac;
+  outline: 1px solid #13218d;
+  text-indent: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  /* background-color: #f4f4f4; */
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #05b060;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+.add-button:hover {
+  box-shadow: 0 0 5px #ff00cc;
+}
+.add-button:active {
+  box-shadow: 0 0 10px #00ab5e;
+}
+
+
+/** Styling => section.student-info */
+section.student-info {
+  margin: 0 auto;
+  min-width: max-content;
+  padding: 10px 20px;
+  /* background-color: #7491c7de; */
+}
+
+section.student-info h2{
+  margin: 5px auto 10px;
+  padding: 15px 10px;
+  width:95%;
+  border-radius: 5px;
+  background-color: #72e6fbd6;
+  text-align: center;
+  font-weight: 600;
+}
+
+section.student-info table {
+  border-collapse: collapse;
+}
+
+section.student-info th,
+section.student-info td {
+  border-top: 2px solid #b6b6b6;
+  padding: 10px 15px;
+}
+section.student-info .student-id {
+  font-weight: 600;
+}
+section.student-info .action-buttons  .edit-link,
+section.student-info .action-buttons  .delete-link{
+  padding: 5px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+section.student-info .action-buttons  .edit-link{
+  background-color: #dcca02;
+}
+.delete-link{
+  background-color: #c11d49;
+  color: #fff;
+}
+
+/** Styling => section.update-student */
+section.update-student {
+  max-width:800px;
+  padding: 10px;
+  margin: 0 auto;
+  /* background-color: #f9cb56d2; */
+}
+
+section.update-student h2{
+  margin: 5px auto 10px;
+  padding: 15px 10px;
+  width:95%;
+  border-radius: 5px;
+  background-color: #72e6fbd6;
+  text-align: center;
+  font-weight: 600;
+}
+
+.action-buttons {
+  width: max-content;
+}
+
+.back-button {
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 10px;
+  background-color: #2a5097;
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+} 
+.back-button:hover {
+  box-shadow: 0 0 3px #b0053b;
+} 
+
+.confirm-delete-container{
+  width: 100wv;
+  max-width: 50rem;
+  /* min-height: 100vh; */
+  margin: 2rem auto;
+  background-color: #0d357f8c;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+}
+.confirm-delete-heading {
+  margin: 30px auto;
+  max-width: 55rem;
+  padding: 1.2rem ;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e8a3bff0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #021259;
+}
+
+.confirm-delete-container h2 {
+  text-align: center;
+  color: #fff;
+}
+.confirm-delete-container h2 .student-name {
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+  color: rgb(254, 204, 76);
+}
+.confirm-action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 90%;
+}
+
+.confirm-action-buttons .delete-link {
+  padding: 10px 20px;
+  border-radius: 3px;
+} 
+.confirm-action-buttons .delete-link:hover {
+  box-shadow: 0 0 3px #ff0000;
+} 
