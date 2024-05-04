@@ -1,0 +1,14 @@
+{% load static %}
+<div class="sidebar h-100">
+  <div class='text-center'>
+    <img class=" profile_img img-fluid rounded-circle mt-5 " src="{% static 'core/images/vijay.jpg' %}" alt="profile image">
+    <h3 class='text-white mt-3 satisfy-regular'>Vijay Jadhav</h3>
+  </div>
+  <hr class='border-light'>
+  <nav class="nav flex-column text-center">
+    <a href="{% url 'home' %}" class="nav-link">Home</a>
+    <a href="{% url 'services' %}" class="nav-link">Services</a>
+    <a href="{% url 'skills' %}" class="nav-link">Skills</a>
+    <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+  </nav>
+</div>

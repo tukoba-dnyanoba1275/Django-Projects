@@ -1,0 +1,58 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block corecss %}
+  {{block.super}}
+  <link rel="stylesheet" href="{% static "service/css/service.css" %}">
+{% endblock corecss %}
+{% block main_content %}
+<div class="services">
+  <h1 class="text-warning mb-5 border-bottom" style="">Services</h1>
+  <div class="services-container">
+    <div>
+      <i class="icon fa-solid fa-magnifying-glass-dollar"></i>
+      <h4>SEO</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+     <i class="icon fa-solid fa-palette"></i>
+      <h4>Web Design</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-solid fa-code"></i>
+      <h4>Web Development</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-brands fa-android"></i>
+      <h4>Android</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-brands fa-apple"></i>
+      <h4>iOS</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-solid fa-rectangle-ad"></i>
+      <h4>Advertising</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-solid fa-pencil"></i>
+      <h4>Logo Design</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-solid fa-database"></i>
+      <h4>Hosting</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+    <div>
+      <i class="icon fa-solid fa-headset"></i>
+      <h4>Support</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, fugiat!</p>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}

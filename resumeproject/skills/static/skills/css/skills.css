@@ -1,0 +1,12 @@
+*{ 
+  box-sizing: border-box;
+}
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center;
+  justify-content: space-evenly; */
+  padding-left: 20px;
+  gap: 20px 40px;
+  width: 100%;
+}

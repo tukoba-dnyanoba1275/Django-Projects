@@ -1,0 +1,35 @@
+.services {
+  width: 100%;
+  padding: 20px;
+  margin-left: 2%;
+}
+
+.services-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.services-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  color: #fff;
+  max-width: 370px;
+  /* border: 1px solid #84eff7; */
+}
+.services-container div h4{
+  color: #fff;
+}
+.services-container div .icon {
+  color: #20fb07;
+  font-size: 1.5rem;
+}
+
+.services-container div p {
+  color: #d6d6d6;
+  text-align: center;
+}

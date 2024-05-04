@@ -1,0 +1,36 @@
+{%extends 'core/base.html' %}
+{% load static %}
+{% block corecss %}
+  {{block.super}}
+  <link rel="stylesheet" href="{% static "core/css/home.css" %}">
+{% endblock corecss %}
+{% block main_content %}
+  <div class='mt-5'>
+    <div class="text-center">
+      <img src="{% static 'core/images/vijay.jpg' %}" alt="profile_img" class="home_img img-thumbnail">
+    </div>
+    <div class="text-white px-4 mt-5 mx-5 text-justify">
+      <h1 class="satisfy-regular">Jay Hari,</h1>
+      <div class="" style="line-height: 1.5rem;">
+        <p style="text-indent:100px; font-size: 1.2rem;">
+          I am <b class="text-warning">Vijay K Jadhav</b> a seasoned full-stack web developer with a passion for crafting immersive and responsive 
+          digital experiences. Proficient in a diverse tech stack, my expertise spans HTML, CSS, and JavaScript, 
+          where I leverage modern frameworks like React and state management tools like Redux to build dynamic and 
+          efficient front-end applications. My design approach is enhanced by the utilization of TAILWIND CSS and Bootstrap, 
+          ensuring both aesthetic appeal and streamlined development. 
+        </p>
+        <p style="text-indent:100px; font-size: 1.2rem;">
+          On the back end, I excel in Python and Django, implementing robust server-side logic and database management. 
+          Git and GitHub are integral to my workflow, facilitating collaborative development and version control. 
+          Committed to staying at the forefront of web technologies, I bring a holistic understanding of the development lifecycle, 
+          from ideation and design to deployment and maintenance. With a keen eye for detail and a collaborative mindset, I thrive 
+          in delivering scalable and innovative solutions that meet and exceed client expectations.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="" class="btn btn-outline-warning my-3 mx-3">Hire Me</a>
+      <a href="" class="btn btn-outline-info my-3 mx-3">Contact</a>
+    </div>
+  </div>
+{% endblock main_content %}
