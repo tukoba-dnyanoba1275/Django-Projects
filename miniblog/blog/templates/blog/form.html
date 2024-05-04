@@ -1,0 +1,17 @@
+<form action="" method='POST' novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors  %}
+    {% for error  in form.non_field_errors  %}
+      <p class="non_field_error">{{error}}</p>
+    {% endfor %}
+  {% endif %}
+
+  {% for field  in form  %}
+    <div class="input-field-wrapper">
+      {{field.label_tag}}
+      <span>{{field.errors|striptags}}</span>
+      {{field}}
+    </div>
+  {% endfor %}
+  <input class="signup-button" type="submit" value="{{p}}">
+</form>

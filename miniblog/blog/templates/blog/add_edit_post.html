@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block body  %}
+  {% include "blog/nav.html" %}
+  <h1>Shree Bhadra Hanuman ki Jay </h1>
+
+  <div class="form-container">
+    {% if add_post %}
+      <h2 class='update-edit-path'>Dashboard/Add Post</h2>
+      {% else %}
+      <h2 class='update-edit-path'>Dashboard/Update Post</h2>
+    {% endif %}
+    {% include 'blog/form.html' with p='Save' %}
+    <div class="option-btn-container">
+      <p>OR</p>
+      <a class='login-option-link back-btn' href="{% url 'dashboard' %}">Cancel</a>
+      {% comment %} <a href="{% url 'dashboard' %}" class="back-btn">Back</a> {% endcomment %}
+    </div>
+  </div>
+{% endblock body  %}

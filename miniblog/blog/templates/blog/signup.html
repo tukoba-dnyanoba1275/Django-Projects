@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+
+{% block body  %}
+  {% include "blog/nav.html" %}
+  <h1>Shree Dnyanoba Mauli Tukaram</h1>
+  <div class="form-container">
+    <h2>Signup here</h2>
+    {% include 'blog/form.html' with p='Signup' %}
+    
+    <div class="option-btn-container">
+      <p>OR</p>
+      <a class='login-option-link' href="{% url 'login' %}">Login</a>
+    </div>
+  </div>
+{% endblock body  %}

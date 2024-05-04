@@ -1,0 +1,64 @@
+{% extends "blog/base.html" %}
+
+{% block body  %}
+  {% include "blog/nav.html" %}
+  <h1>Jay Jay Shree Seeta Ramachandra</h1>
+  {% if messages %}
+  {% for message  in messages %}
+  <p {% if message.tags %}class="{{message.tags}}"{% endif %}>{{message}}</p>
+  {% endfor %}
+  {% endif %}
+
+  <div class="dashboard">
+    <aside class="side-bar">
+      <h3>Profile</h3>
+      <h4>{{full_name}}</h4>
+      {% for grp in groups %}
+        <p>{{grp.name}}</p>
+      {% endfor %}
+    </aside>
+
+    <div class="posts-info-wrapper">
+      <h2 class='dashboard-text'> Dashboard Page</h2>
+      <a href="{% url 'add_post' %}" class="add_post-btn">Add Post</a>
+  
+      {% if posts %}
+      <h3 class="posts-info-text"> Show Post Information</h3>
+      <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for post  in posts %}
+              <tr>
+                <td>{{post.id}}</td>
+                <td class='post-title'>{{post.title}}</td>
+                <td class='post-description'>{{post.description}}</td>
+                <td class='action-btns-wrapper-td'>
+                  <div class='action-btn-wrapper'>
+                    <a class='edit_post-btn' href="{% url 'edit_post' post.id %}">Edit</a>
+                    {% if perms.blog.delete_post %}
+                      <form action="{% url 'delete_post' post.id %}" method='POST'>
+                        {% csrf_token %}
+                        <input class='delete_post-btn' type="submit" value="Delete">
+                      </form>
+                    {% endif %}
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <h4>No Records</h4>
+      {% endif %}
+    </div>
+  </div>
+{% endblock body  %}
