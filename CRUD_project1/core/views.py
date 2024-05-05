@@ -26,7 +26,7 @@ def home(request):
   
   students = Student.objects.all()
   
-  return render(request, 'core/core.html', context={'form': form, 'students': students})
+  return render(request, 'core/index.html', context={'form': form, 'students': students})
 
 
 def confirm_delete(request, stud_id):
@@ -41,7 +41,7 @@ def delete(request, stud_id):
   student = Student.objects.get(pk=stud_id)
   student.delete()
   # print("Jay Jay Radhe Govind..💥", stud_id)
-  return HttpResponseRedirect('/')
+  return HttpResponseRedirect('/student-info/')
 
   
 def update(request, stud_id):
@@ -68,7 +68,7 @@ class StudentsInfoView(ListView):
   model = Student
   context_object_name = 'students'
   template_name = 'core/students_info.html'
-  ordering = ['-name']
+  # ordering = ['-name']
 
 
 class StudentRegistrationView(CreateView):

@@ -1,0 +1,16 @@
+
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block main %}
+  <main class="home-page">
+    <div class="welcome-title">
+      <h1>Welcome to students' info management app...👩🏻‍🎓👨🏻‍🎓</h1>
+      <p>- Organize 📑 your students info quikly.💡</p>
+      {% comment %} <p>- Todo helps you to focus🎯 on your works, ideas and games. 🤾🏻‍♂️</p>  {% endcomment %}
+      <a class="get-started-link" href="{% url 'student_list' %}">Get Started</a>
+    </div>
+    <img class="management-image" src="{% static 'core/images/TaskManagement-hero.png' %}" alt="Todo-list Image">
+  </main>
+{% endblock main %}
