@@ -3,30 +3,35 @@
 {% block main %}
 <main class="main-content">
   <section class="student-info">
-    <h2>Show Student Information</h2>
-    <div class="table-wrapper">
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          {% comment %} <th>Password</th> {% endcomment %}
-          <th>Action</th>
-        </tr>
-        {% for student in students %}
+    {% if students %}
+      <h2>Show Student Information</h2>
+      <div class="table-wrapper">
+        <table>
           <tr>
-            <td class='student-id'>{{student.id}}</td>
-            <td>{{student.name}}</td>
-            <td>{{student.email}}</td>
-            {% comment %} <td>{{student.password}}</td> {% endcomment %}
-            <td class='action-buttons'>
-              <a class='edit-link' href="{% url 'update' student.id %}">Edit</a>
-              <a class='delete-link' href="{% url 'confirm_delete' student.id %}">Delete</a>
-            </td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            {% comment %} <th>Password</th> {% endcomment %}
+            <th>Action</th>
           </tr>
-        {% endfor %}
-      </table>
-    </div>
+          {% for student in students %}
+            <tr>
+              <td class='student-id'>{{student.id}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.email}}</td>
+              {% comment %} <td>{{student.password}}</td> {% endcomment %}
+              <td class='action-buttons'>
+                <a class='edit-link' href="{% url 'update' student.id %}">Edit</a>
+                <a class='delete-link' href="{% url 'confirm_delete' student.id %}">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+        
+      </div>
+    {% else %}
+      <h2>You have no student info</h2>
+    {% endif %}
   </section>
 </main>
 {% endblock main %}

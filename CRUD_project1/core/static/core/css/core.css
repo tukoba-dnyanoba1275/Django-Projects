@@ -46,6 +46,48 @@ a {
   box-shadow: 0 0 2px rgb(170, 171, 172);
 }
 
+/** Styling home page */
+.home-page {
+  /* height: 100vh; */
+  width: 90%;
+  position: relative;
+  max-width: 62rem;
+  margin: 2rem auto;
+}
+.welcome-title{
+  max-width: 27rem;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.welcome-title h1 {
+  color: #daa520;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.welcome-title a.get-started-link {
+  font-size: 1.3rem;
+  margin: 2rem 1rem;
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  background-color: #ff00cc;
+}
+
+.management-image {
+  height: 20rem;
+  width: 30rem;
+  top: 5rem;
+  right: 0;
+  /* object-fit: contain; */
+  position: absolute;
+  z-index: -1;
+}
+
+
+
 /** Styling => main-content */
 .main-content {
   margin: 1rem auto;
@@ -164,7 +206,7 @@ section.student-info table {
 section.student-info th,
 section.student-info td {
   border-top: 2px solid #b6b6b6;
-  padding: 10px 15px;
+  padding: 20px 15px;
   max-width: 200px;
   overflow-x: hidden;
 }
@@ -274,6 +316,16 @@ section.update-student h2{
 
 
 /** Responsive Design */
+@media screen and (max-width:930px) {
+  .home-page {
+    height: 100vh;
+   }
+  .management-image {
+    height: 18rem;
+    width: 25rem;
+    top: 15rem;
+  }
+}
 @media screen and (max-width:500px) {
   section.add-student {
     margin: 3rem auto 1rem;
@@ -283,5 +335,46 @@ section.update-student h2{
   section.student-info h2{
     font-size: 1.25rem;
     padding: 0.7rem 1rem;
+  }
+
+  .home-page {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .welcome-title{
+    padding: 1.5rem 0;
+    font-size: 1rem;
+  }
+  .welcome-title h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .management-image {
+    height: 15rem;
+    width: 20rem;
+    top: 18rem;
+    right: 1.2rem;
+  }
+
+}
+
+@media screen and (max-width:376px) {
+  .welcome-title h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-title a.get-started-link {
+    font-size: 1rem;
+    margin: 1rem 0.5rem;
+  }
+  .management-image {
+    height: 12rem;
+    width: 17rem;
+    right: 0.5rem;
+    top: 15rem;
   }
 }
