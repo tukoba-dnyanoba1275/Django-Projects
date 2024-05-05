@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
 
 from .models import Student
 from .form import StudentRegistration
@@ -56,3 +58,20 @@ def update(request, stud_id):
     # print("Jay Shree Ram Krushna Hari ...🙏🏻")
   
   return render(request, 'core/update.html', context={'form': form, })
+
+
+
+
+class StudentsInfoView(ListView):
+  model = Student
+  context_object_name = 'students'
+  template_name = 'core/students_info.html'
+  ordering = ['-name']
+
+
+class StudentRegistrationView(CreateView):
+  template_name = 'core/student_registration.html'
+  model = Student
+  fields = '__all__'
+  url = '/'
+  # form = StudentRegistration
