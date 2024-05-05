@@ -1,3 +1,8 @@
+:root {
+  --theme-dark:  #011445;
+  --theme-light:  #ced9f7;
+}
+
 * {
   font-family: sans-serif;
   box-sizing: border-box;
@@ -6,16 +11,24 @@
   margin: 0;
 }
 
-body.color {
+/* body.light {
   background: linear-gradient(245deg, #b0caf6, #dcf6a8);
-  /* background-color: #e5e7ec; */
+} */
+
+body {
   min-height: 100vh;
-  padding: 20px;
+  background-color: var(--theme-light);
+  color: var(--theme-dark);
   width: 100vw;
 }
+
 a {
+  cursor: pointer;
   text-decoration: none;
+  color: #e4e4e4;
+  font-size: 1rem;
 }
+
 
 /** Styling => heading */
 .heading {
@@ -32,19 +45,20 @@ a {
 
 /** Styling => main-content */
 .main-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
   margin: 1rem auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
 }
 
 /** Styling => section.add-student */
 section.add-student {
-  min-width:320px;
-  max-width:420px;
+  margin: 5rem auto 1rem;
+  min-width:310px;
+  width: 90%;
+  max-width:600px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #f828d246;
 }
 
 section.add-student h2,
@@ -138,6 +152,7 @@ section.student-info .action-buttons  .edit-link{
   color: #fff;
 }
 
+
 /** Styling => section.update-student */
 section.update-student {
   max-width:800px;
@@ -174,6 +189,7 @@ section.update-student h2{
   box-shadow: 0 0 3px #b0053b;
 } 
 
+/** style confirm_delete template */
 .confirm-delete-container{
   width: 100wv;
   max-width: 50rem;
@@ -223,13 +239,11 @@ section.update-student h2{
 } 
 
 
+
 /** Responsive Design */
-@media screen and (max-width:1060px) {
-  .main-content {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    row-gap: 4rem;
+@media screen and (max-width:500px) {
+  section.add-student {
+    margin: 3rem auto 1rem;
+    padding: 2rem 0.5rem;
   }
 }
