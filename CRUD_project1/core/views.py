@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 
@@ -75,3 +77,19 @@ class StudentRegistrationView(CreateView):
   fields = '__all__'
   url = '/'
   # form = StudentRegistration
+
+def student_registration(request):
+  if request.method == 'POST':
+    form = StudentRegistration(request.POST)
+    if form.is_valid():
+      stud_name = form.cleaned_data['name']
+      stud_email = form.cleaned_data['email']
+      pswd = form.cleaned_data['password']
+      student = Student.objects.create(name=stud_name, email=stud_email, password=pswd)
+      student.save()
+      messages.success(request, f"Registration of {stud_name} as student is successful. ✨")
+      return HttpResponseRedirect('/student-create/')
+  else:
+    form = StudentRegistration()
+  
+  return render(request, 'core/student_registration.html', {'form': form})

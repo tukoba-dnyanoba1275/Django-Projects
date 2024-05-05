@@ -5,8 +5,8 @@ header.header {
   height: 5.5rem;
   width: 95%;
   max-width: 65rem;
-  background-color: #081343;
-  color: #dddddd;
+  background-color: var(--theme-dark);
+  color: var(--theme-light);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ header.header {
   margin: 0 auto;
   padding: 10px 20px 10px 40px;
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 2px #c7c7c7;
+  box-shadow: 1px 0 2px #cdcdcd;
 }
 
 .app-logo {
@@ -38,6 +38,13 @@ nav.middle-section .nav-link {
   display: flex;
   align-items: center;
 }
+
+#theme-Btn {
+  cursor: pointer;
+  background-color: #081343;
+  font-size: 1.2rem;
+}
+
 .right-section .profile-logo {
   height: 3rem;
   width: 3rem;

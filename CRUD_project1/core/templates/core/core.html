@@ -1,8 +1,15 @@
 {% extends "core/base.html" %}
+{% load static %}
+
+{% block heading %}
+  <h1 class="heading">!! ...Jay Jay Ram Krushna Hari... !!</h1>
+{% endblock heading %}
+
 
 {% block main %}
 <main class="main-content">
-  <section class="add-student">
+  <h2>Welcome to students' info management app...👩🏻‍🎓👨🏻‍🎓</h2>
+  {% comment %} <section class="add-student">
     <h2>Add New Student</h2>
     <form action="" method='POST' novalidate>
       {% csrf_token %}
@@ -19,27 +26,33 @@
   </section>
   <section class="student-info">
     <h2>Show Student Information</h2>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        {% comment %} <th>Password</th> {% endcomment %}
-        <th>Action</th>
-      </tr>
-      {% for student in students %}
-        <tr>
-          <td class='student-id'>{{student.id}}</td>
-          <td>{{student.name}}</td>
-          <td>{{student.email}}</td>
-          {% comment %} <td>{{student.password}}</td> {% endcomment %}
-          <td class='action-buttons'>
-            <a class='edit-link' href="{% url 'update' student.id %}">Edit</a>
-            <a class='delete-link' href="{% url 'confirm_delete' student.id %}">Delete</a>
-          </td>
-        </tr>
-      {% endfor %}
-    </table>
-  </section>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr>
+              <td class='student-id'>{{student.id}}</td>
+              <td>{{student.name}}</td>
+              <td>{{student.email}}</td>
+              <td>{{student.password}}</td>
+              <td class='action-buttons'>
+                <a class='edit-link' href="{% url 'update' student.id %}">Edit</a>
+                <a class='delete-link' href="{% url 'confirm_delete' student.id %}">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section> {% endcomment %}
 </main>
 {% endblock main %}

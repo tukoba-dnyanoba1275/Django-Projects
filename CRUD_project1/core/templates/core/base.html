@@ -6,16 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block style %}
     <link rel="stylesheet" href="{% static "core/css/core.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/header.css" %}">
   {% endblock style %}
   <title>Students Registration App</title>
 </head>
-<body>
+<body class="theme-light">
   {% block header %}
-    <header class='heading'>
-      Function Based View ModelForm CRUD Project
+    <header class="header">
+      <div class="left-section">
+        <img class='app-logo' src="{% static 'core/images/todo-manage.png' %}" alt="App logo" srcset="">
+      </div>
+      <nav class="middle-section">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+        <a class="nav-link" href="{% url 'student_list' %}">Student List</a>
+        <a class="nav-link" href="{% url 'register_student' %}">Add Student</a>
+      </nav>
+      <div class="right-section">
+        <button id="theme-Btn" title="Change background">🌙</button>
+        <img src="{% static 'core/images/students.jpg' %}" alt="" class="profile-logo">
+      </div>
     </header>
   {% endblock header %}
+
+  {% block heading %}
+    {% comment %} <h1 class='heading'>
+      Function Based View ModelForm CRUD Project
+    </h1> {% endcomment %}
+  {% endblock heading %}
+
+
   {% block main %}{% endblock main %}
   
 </body>
+{% block script %}
+  <script src="{% static 'core/js/script.js' %}"></script>
+{% endblock script %}
 </html>
