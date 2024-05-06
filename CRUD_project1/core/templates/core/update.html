@@ -13,8 +13,12 @@
           {{field}}
         </div>
       {% endfor %}
-      <div class="confirm-action-buttons">
-        <button class='add-button update-button' type="submit">Update</button>
+     <div class="confirm-action-buttons">
+        <div class="buttons">
+          <button class='add-button update-button' type="submit">Save</button>
+          {% comment %} <a class='add-button update-button save-update-button' href="{% url 'register_student' %}">Save and add another</a>
+          <a class='add-button update-button save-update-button' href="{% url 'update' %}">Save and continue editing</a>  {% endcomment %}
+        </div>
         <a class='back-button' href="{% url 'student_list' %}">Cancel</a>
       </div>
     </form>
