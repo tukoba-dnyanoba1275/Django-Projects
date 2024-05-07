@@ -17,22 +17,9 @@ from .forms import StudentRegistration, UserSignupForm
 # Create your views here.
 #* home fn will add new student and show all students data in table format
 def home(request):
-  # if request.method == 'POST':
-  #   form = StudentRegistration(request.POST)
-  #   if form.is_valid():
-  #     nm = form.cleaned_data['name']
-  #     em = form.cleaned_data['email']
-  #     pswd = form.cleaned_data['password']
-  #     student = Student(name=nm, email=em, password=pswd)
-  #     student.save()
-  #     # form = StudentRegistration()
-  #     return HttpResponseRedirect('/')
-  # else:
-  #   form = StudentRegistration()
-  
-  # students = Student.objects.all()
-  # context={'form': form, 'students': students}
-
+  # if request.user.is_authenticated:
+  #   return HttpResponseRedirect('/students-info/')
+  # else :
   return render(request, 'core/index.html',)
 
 
@@ -66,6 +53,11 @@ class UserLoginView(LoginView):
   Login user to their account after successful check of its credentials, else show error msg
   """
   template_name = 'core/user_login.html'
+  fields = "__all__"
+  redirect_authenticated_user = True
+
+  def get_success_url(self) -> str:
+    return reverse_lazy('student_list')
 
   
 

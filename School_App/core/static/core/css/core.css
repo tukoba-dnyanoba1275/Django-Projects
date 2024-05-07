@@ -66,6 +66,12 @@ a {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+.user-name {
+  color: var(--theme-light);
+  background-color: #bd12a6a0;
+  padding: 0 0.5rem;
+  border-radius: 0.2rem;
+}
 .welcome-title a.get-started-link {
   font-size: 1.3rem;
   margin: 2rem 1rem;

@@ -38,21 +38,55 @@ nav.middle-section .nav-link {
 .right-section {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 #theme-Btn {
   cursor: pointer;
   background-color: #081343;
   font-size: 1.2rem;
+  margin-right: 2.5rem;
 }
 
 .right-section .profile-logo {
   height: 3rem;
   width: 3rem;
   border-radius: 2rem;
-  margin-left: 2.5rem;
 }
 
+#logout-button-wrapper {
+  position: absolute;
+  top: 3.5rem;
+  right: -0.5rem;
+  display: none;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  background-color: rgb(85, 108, 150);
+}
+#logout-btn {
+  border-radius: 0.3rem;
+  border: 1px solid #ab0101;
+  padding: 0.3rem 1.2rem;
+  color: #fff;
+  background-color: #ab0101;
+}
+#logout-btn:hover {
+  text-decoration: underline;
+  /* background-color: transparent; */
+}
+
+/* .log-sign-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+} */
+.log-sign-btn {
+  padding: 0.25rem 0.5rem;
+}
+.log-sign-btn:hover {
+  text-decoration: underline #12f90a;
+}
 
 
 /** Responsive Design */
@@ -62,7 +96,7 @@ nav.middle-section .nav-link {
     border-radius: 0.4rem;
     height: 5rem;
   }
-
+  
   .app-logo {
     height: 4rem;
     width: 4rem;
@@ -105,11 +139,13 @@ nav.middle-section .nav-link {
     margin: 0 0.5rem;
   }
 
+  #theme-Btn {
+    margin-right: 1.2rem;
+  }
   .right-section .profile-logo {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 2rem;
-    margin-left: 1.2rem;
   }
 }
 
@@ -132,11 +168,13 @@ nav.middle-section .nav-link {
     margin: 0 0.5rem;
   }
 
+  #theme-Btn {
+    margin-right: 1rem;
+  }
   .right-section .profile-logo {
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 1rem;
-    margin-left: 1rem;
   }
 }
 

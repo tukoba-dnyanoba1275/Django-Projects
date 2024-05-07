@@ -1,0 +1,28 @@
+
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block main %}
+{% if request.user.is_authenticated %}
+  <main class="home-page">
+    <div class="welcome-title">
+      <h1>Welcome dear user <span class="user-name">{{request.user}}</span> to School info management app 🏫</h1>
+      {% comment %} <p>- Organize 📑 your students info quikly.💡</p> {% endcomment %}
+      <p>This app is currently in development mode, please co-operate with us and suggest any improvements, new features, and more...!</p>
+      {% comment %} <a class="get-started-link" href="{% url 'user_signup' %}">Get Started</a> {% endcomment %}
+    </div>
+    {% comment %} <img class="management-image" src="{% static 'core/images/TaskManagement-hero.png' %}" alt="Todo-list Image"> {% endcomment %}
+  </main>
+{% else %}
+  <main class="home-page">
+    <div class="welcome-title">
+      <h1>Welcome to School's info management app...🏫</h1>
+      <p>- Organize 📑 your school info quikly.💡</p>
+      {% comment %} <p>- Todo helps you to focus🎯 on your works, ideas and games. 🤾🏻‍♂️</p>  {% endcomment %}
+      <a class="get-started-link" href="{% url 'user_signup' %}">Get Started</a>
+    </div>
+    <img class="management-image" src="{% static 'core/images/TaskManagement-hero.png' %}" alt="Todo-list Image">
+  </main>
+{% endif %}
+{% endblock main %}
