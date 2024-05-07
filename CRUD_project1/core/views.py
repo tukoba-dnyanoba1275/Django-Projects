@@ -1,32 +1,74 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.contrib.auth.views import LoginView, LogoutView 
+from django.contrib.auth.mixins import LoginRequiredMixin 
+from django.views.generic.edit import CreateView, FormView
+
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout
 
 from .models import Student
-from .form import StudentRegistration
+from .forms import StudentRegistration, UserSignupForm
 
 # Create your views here.
 #* home fn will add new student and show all students data in table format
 def home(request):
-  if request.method == 'POST':
-    form = StudentRegistration(request.POST)
-    if form.is_valid():
-      nm = form.cleaned_data['name']
-      em = form.cleaned_data['email']
-      pswd = form.cleaned_data['password']
-      student = Student(name=nm, email=em, password=pswd)
-      student.save()
-      # form = StudentRegistration()
-      return HttpResponseRedirect('/')
-  else:
-    form = StudentRegistration()
+  # if request.method == 'POST':
+  #   form = StudentRegistration(request.POST)
+  #   if form.is_valid():
+  #     nm = form.cleaned_data['name']
+  #     em = form.cleaned_data['email']
+  #     pswd = form.cleaned_data['password']
+  #     student = Student(name=nm, email=em, password=pswd)
+  #     student.save()
+  #     # form = StudentRegistration()
+  #     return HttpResponseRedirect('/')
+  # else:
+  #   form = StudentRegistration()
   
-  students = Student.objects.all()
+  # students = Student.objects.all()
+  # context={'form': form, 'students': students}
+
+  return render(request, 'core/index.html',)
+
+
+#* User Registration 
+class UserSignUpView(FormView):
+  """
+  Creates new user using Django's built-in model 'User' 
+  """
   
-  return render(request, 'core/index.html', context={'form': form, 'students': students})
+  template_name = 'core/user_signup.html'
+  form_class = UserSignupForm
+  redirect_authenticated_user = True
+
+  success_url = reverse_lazy('student_list')
+
+  def form_valid(self, form) -> HttpResponse:
+    user = form.save()
+    if user is not None :
+      login(self.request, user)
+    return super(UserSignUpView, self).form_valid(form)
+  
+  def get(self, *args, **kwargs):
+    if self.request.user.is_authenticated:
+      return redirect('student_list')
+    
+    return super(UserSignUpView, self).get(*args,**kwargs)
+  
+
+class UserLoginView(LoginView):
+  """
+  Login user to their account after successful check of its credentials, else show error msg
+  """
+  template_name = 'core/user_login.html'
+
+  
+
 
 
 def confirm_delete(request, stud_id):
@@ -62,13 +104,16 @@ def update(request, stud_id):
   return render(request, 'core/update.html', context={'form': form, })
 
 
-
-
+#* student info view shows students list
 class StudentsInfoView(ListView):
   model = Student
   context_object_name = 'students'
   template_name = 'core/students_info.html'
   # ordering = ['-name']
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    return context
 
 
 class StudentRegistrationView(CreateView):

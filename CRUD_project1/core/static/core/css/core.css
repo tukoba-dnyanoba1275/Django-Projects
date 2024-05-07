@@ -130,7 +130,7 @@ section.add-student {
 
 section.add-student h2,
 section.student-info h2{
-  margin: 5px auto 10px;
+  margin: 0.5rem auto 1rem;
   padding: 15px 10px;
   width:95%;
   max-width: 40rem;
@@ -141,32 +141,48 @@ section.student-info h2{
 
 }
 
+form {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+
 .input-field-wrapper {
   width: 100%;
-  margin: 5px;
-  padding: 5px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
 }
 .input-field-wrapper span {
   color: #cd2121;
-  margin-left: 10px;
+  margin-left: 0.5rem;
 }
 .input-field-wrapper input {
   padding: 10px 0;
-  margin: 5px 0;
+  margin: 0.5rem 0;
   width: 95%;
   font-size: 1.2rem;
-  color: var(--theme-dark);
-  border: 1px solid #acacac;
+  /* color: var(--theme-dark); */
+  /* border: 1px solid #acacac; */
   outline: 1px solid #13218d;
   text-indent: 5px;
   border-radius: 3px;
   background-color: var(--theme-light);
   /* background-color: #f4f4f4; */
 }
-
+input[type='checkbox'] {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
 .add-button {
   padding: 10px 30px;
-  background-color: #05b060;
+  background-color: #076eaa;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -175,7 +191,21 @@ section.student-info h2{
   box-shadow: 0 0 5px #ff00cc;
 }
 .add-button:active {
-  box-shadow: 0 0 10px #00ab5e;
+  box-shadow: 0 0 10px #0c8eda;
+}
+
+.save-update-button {
+  background-color: #024971;
+}
+
+form .login-button {
+  width: 60%;
+}
+
+.option-link {
+  /* font-size: 1rem; */
+  margin-left: 0.2rem;
+  color: #ff00cc;
 }
 
 
@@ -205,7 +235,7 @@ section.student-info table {
 
 section.student-info th,
 section.student-info td {
-  border-top: 2px solid #b6b6b6;
+  border: 2px solid #b6b6b6;
   padding: 20px 15px;
   max-width: 200px;
   overflow-x: hidden;
@@ -254,7 +284,7 @@ section.update-student h2{
   text-decoration: none;
   font-size: 1rem;
   margin: 0 10px;
-  background-color: #2a5097;
+  background-color: #b0053b;
   padding: 10px 20px;
   border-radius: 3px;
   color: #fff;
