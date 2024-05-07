@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block header %}
+  <h1 class="confirm-delete-heading">Confirm to delete your info</h1>
+{% endblock header %}
+
+{% block main %}
+  <div class="confirm-delete-container">
+    <h2>Are you sure? You want to delete: <span class="student-name">{{student.name}}</span></h2>
+    <div class="confirm-action-buttons">
+      <a class='delete-link' href="{% url 'delete' student.id %}">Delete</a>
+      <a class='back-button' href="{% url 'student_list' %}">Cancel</a>
+    </div>
+  </div>
+{% endblock main %}

@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+  <main class="main-content">
+    <div class="messages-container">
+      {% if messages %}
+        {% for message in messages %}
+          <p {% if message.tags %}class="{{message.tags}}"{% endif %}>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <section class="add-student">
+      <h2>Login in to your account</h2>
+      <form action="" method='POST' novalidate>
+        {% csrf_token %}
+        {{form.non_field_errors}}
+        {% for field in form %}
+          <div class='input-field-wrapper'>
+            {{field.label_tag}}
+            <span>{{field.errors|striptags}}</span>
+            {{field}}
+          </div>
+        {% endfor %}
+        <button class='add-button login-button' type="submit">Login</button>
+        <hr>
+        <p>Forgot your password! <a class='option-link' href="{% url 'user_signup' %}">Reset Password</a></p>
+        <p>Don't have an account? <a class='option-link' href="{% url 'user_signup' %}">Join Now</a></p>
+      </form>
+    </section>
+  </main>
+{% endblock main %}
