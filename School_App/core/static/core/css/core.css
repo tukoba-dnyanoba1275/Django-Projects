@@ -48,6 +48,7 @@ a {
 
 /** Styling home page */
 .home-page {
+  /* height: 100vh; */
   width: 90%;
   position: relative;
   max-width: 62rem;
@@ -86,6 +87,7 @@ a {
   width: 30rem;
   top: 5rem;
   right: 0;
+  /* object-fit: contain; */
   position: absolute;
   z-index: -1;
 }
@@ -113,6 +115,7 @@ section.add-student {
 .messages-container {
   margin: 1rem auto;
   width: 95%;
+  /* max-width:16rem; */
   padding: 2rem 1rem;
   text-align: center;
   font-size: 1.2rem;
@@ -169,10 +172,13 @@ form {
   margin: 0.5rem 0;
   width: 95%;
   font-size: 1.2rem;
+  /* color: var(--theme-dark); */
+  /* border: 1px solid #acacac; */
   outline: 1px solid #13218d;
   text-indent: 5px;
   border-radius: 3px;
   background-color: var(--theme-light);
+  /* background-color: #f4f4f4; */
 }
 input[type='checkbox'] {
   display: inline-block;
@@ -203,6 +209,7 @@ form .login-button {
 }
 
 .option-link {
+  /* font-size: 1rem; */
   margin-left: 0.2rem;
   color: #ff00cc;
 }
@@ -222,6 +229,7 @@ section.student-info {
 section.student-info .table-wrapper {
   width: 100%;
   max-width: max-content;
+  /* border: #f853dd25; */
   margin: 2rem auto 0;
   overflow-x: auto;
 }
@@ -261,6 +269,7 @@ section.update-student {
   max-width:800px;
   padding: 10px;
   margin: 0 auto;
+  /* background-color: #f9cb56d2; */
 }
 
 section.update-student h2{
@@ -295,6 +304,7 @@ section.update-student h2{
 .confirm-delete-container{
   width: 100wv;
   max-width: 50rem;
+  /* min-height: 100vh; */
   margin: 2rem auto;
   background-color: #0d357f8c;
   border-radius: 1rem;

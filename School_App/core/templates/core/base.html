@@ -17,7 +17,6 @@
         <img class='app-logo' src="{% static 'core/images/todo-manage.png' %}" alt="App logo" srcset="">
       </div>
       <nav class="middle-section">
-        
         <a class="nav-link" href="{% url 'home' %}">Home</a>
         {% if request.user.is_authenticated %}
           <a class="nav-link" href="{% url 'student_list' %}">Student List</a>
